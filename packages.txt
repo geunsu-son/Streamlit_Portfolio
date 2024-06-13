@@ -1,2 +1,3 @@
-tesseract-ocr
-tesseract-ocr-kor
+sudo add-apt-repository ppa:alex-p/tesseract-ocr-devel
+sudo apt install -y tesseract-ocr
+sudo apt install -y tesseract-ocr-kor
