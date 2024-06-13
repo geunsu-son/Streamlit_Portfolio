@@ -35,7 +35,6 @@ if tesseract_path:
     pytesseract.pytesseract.tesseract_cmd = tesseract_path
 else:
     st.error("Tesseract binary not found in PATH.")
-st.write(pytesseract.get_tesseract_version())
 
 # # Tesseract OCR 엔진 경로 설정 (in Windows)
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -73,9 +72,10 @@ def to_excel(df):
 
 # add streamlit title
 st.title("📝 LoL Score Board Img to Text")
+st.write(pytesseract.get_tesseract_version())
 
 # 이미지 삽입 형태 예시
-st.write("아래 이미지처럼 캡처하여 이미지를 넣어주세요.")
+st.write("아래 이미지를 참고해 롤 스코어 보드를 캡처한 이미지를 넣어주세요.")
 
 uploaded_image = st.file_uploader("이미지 업로드", type=["jpg", "png", "jpeg"])
 
