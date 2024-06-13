@@ -26,6 +26,7 @@ charset-normalizer==3.2.0
 chroma-hnswlib==0.7.3
 chromadb==0.4.11
 click==8.1.7
+colorama==0.4.6
 coloredlogs==15.0.1
 comm==0.1.4
 confection==0.1.3
@@ -89,9 +90,12 @@ jsonschema-specifications==2023.7.1
 jupyter_client==8.3.1
 jupyter_core==5.3.1
 kiwisolver==1.4.5
-langchain==0.0.332
+langchain==0.2.3
+langchain-community==0.2.4
+langchain-core==0.2.5
+langchain-text-splitters==0.2.1
 langcodes==3.3.0
-langsmith==0.0.52
+langsmith==0.1.77
 layoutparser==0.3.4
 loguru==0.7.2
 lxml==4.9.3
@@ -121,9 +125,9 @@ onnxruntime==1.16.0
 openai==0.28.0
 opencv-python==4.8.0.76
 openpyxl==3.1.2
-orjson==3.9.9
+orjson==3.10.4
 overrides==7.4.0
-packaging==23.1
+packaging==23.2
 pandas==2.1.0
 parso==0.8.3
 pathspec==0.11.2
@@ -161,6 +165,7 @@ pyparsing==3.1.1
 pypdf==3.16.2
 pypdfium2==4.20.0
 PyPika==0.48.9
+pyreadline3==3.4.1
 pytesseract==0.3.10
 python-dateutil==2.8.2
 python-docx==0.8.11
@@ -172,6 +177,7 @@ python-pptx==0.6.21
 pytube==11.0.2
 pytz==2023.3.post1
 pytz-deprecation-shim==0.1.0.post0
+pywin32==306
 PyYAML==6.0.1
 pyzmq==25.1.1
 rapidfuzz==3.3.1
@@ -235,6 +241,7 @@ watchfiles==0.20.0
 wcwidth==0.2.6
 websockets==11.0.3
 wikipedia==1.4.0
+win32-setctime==1.1.0
 xlrd==2.0.1
 XlsxWriter==3.1.5
 yarl==1.9.2
