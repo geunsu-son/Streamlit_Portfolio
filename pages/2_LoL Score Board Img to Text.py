@@ -79,39 +79,43 @@ if uploaded_image is not None:
         text_fix = re.sub(r"[^0-9/a-zA-Z\uAC00-\uD7A3\n\s]", "", text.replace('\n\n','\n'))
         output = pd.DataFrame(columns = ['category']+['player' + str(x+1) for x in range(10)])
         text_fix_line = text_fix.split('\n')
-        for text_fix_ in text_fix_line:
-            if len(text_fix_) < 20:
-                continue
+        try:
+            for text_fix_ in text_fix_line:
+                if len(text_fix_) < 20:
+                    continue
 
-            text_cate_ = text_fix_[:text_fix_.find('    ')].strip()
-            text_data_ = text_fix_[text_fix_.find('    '):].strip()
+                text_cate_ = text_fix_[:text_fix_.find('    ')].strip()
+                text_data_ = text_fix_[text_fix_.find('    '):].strip()
 
-            text_data_ = text_data_.split(' ')
-            if len(text_data_) < 10:
-                continue
+                text_data_ = text_data_.split(' ')
+                if len(text_data_) < 10:
+                    continue
 
-            value_to_remove = ''
-            while value_to_remove in text_data_:
-                text_data_.remove(value_to_remove)
+                value_to_remove = ''
+                while value_to_remove in text_data_:
+                    text_data_.remove(value_to_remove)
 
-            text_input_ = [text_cate_] + [x.strip() for x in text_data_]
-            output.loc[len(output)] = text_input_
+                text_input_ = [text_cate_] + [x.strip() for x in text_data_]
+                output.loc[len(output)] = text_input_
 
-        output = output.transpose()
-        output.columns = output.loc['category'].tolist()
-        output = output.drop('category')
+            output = output.transpose()
+            output.columns = output.loc['category'].tolist()
+            output = output.drop('category')
         
-        # 스트림릿 앱에서 데이터프레임과 다운로드 버튼 표시
-        st.header("추출 결과")
-        st.dataframe(output)
+            # 스트림릿 앱에서 데이터프레임과 다운로드 버튼 표시
+            st.header("추출 결과")
+            st.dataframe(output)
 
-        # 다운로드 버튼
-        st.download_button(
-            label="Download Excel file",
-            data=to_excel(output),
-            file_name='image_to_text_result_excel.xlsx',
-            mime='application/vnd.ms-excel'
-        )
+            # 다운로드 버튼
+            st.download_button(
+                label="Download Excel file",
+                data=to_excel(output),
+                file_name='image_to_text_result_excel.xlsx',
+                mime='application/vnd.ms-excel'
+            )
+        except:
+            st.error('스코어 보드를 표로 만드는 과정에서 에러가 발생했습니다. 표로 변환하기 전 변환된 text는 아래와 같습니다.', icon="🚨")
+            st.write(text_fix_line)
 else:
     st.subheader('예시 이미지')
 
