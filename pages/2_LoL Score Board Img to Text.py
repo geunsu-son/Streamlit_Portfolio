@@ -25,20 +25,6 @@ st.sidebar.write(
     """
 )
 
-# search for tesseract binary in path
-@st.cache_resource
-def find_tesseract_binary() -> str:
-    return shutil.which("tesseract")
-
-tesseract_path = find_tesseract_binary()
-if tesseract_path:
-    pytesseract.pytesseract.tesseract_cmd = tesseract_path
-else:
-    st.error("Tesseract binary not found in PATH.")
-
-# # Tesseract OCR 엔진 경로 설정 (in Windows)
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
 def ocr_process(image):
     # 이미지를 numpy 배열로 변환
     np_image = np.array(image)
@@ -75,7 +61,12 @@ st.title("📝 LoL Score Board Img to Text")
 st.write(pytesseract.get_tesseract_version())
 
 # 이미지 삽입 형태 예시
-st.write("아래 이미지를 참고해 롤 스코어 보드를 캡처한 이미지를 넣어주세요.")
+st.write(
+    """
+아래 이미지를 참고해 롤 스코어 보드를 캡처한 이미지를 넣어주세요.  
+OCR의 버전이 5.0 이상이 아니라면 변환이 원활하지 않을 수 있습니다.
+    """
+)
 
 uploaded_image = st.file_uploader("이미지 업로드", type=["jpg", "png", "jpeg"])
 
