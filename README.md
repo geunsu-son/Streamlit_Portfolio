@@ -1,4 +1,4 @@
-# SUPER-SON's Portfolio
+# SUPER-SON's Resume
 
 ![readme_img](https://github.com/geunsu-son/Streamlit_Portfolio/assets/168807522/c21ebd01-4fd9-4ff3-a7a4-23806321a0fc)
 
