@@ -1,3 +1,4 @@
 .env
 .streamlit
+.source_ignore
 portfolio_env
