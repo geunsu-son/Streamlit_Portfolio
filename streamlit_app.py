@@ -111,7 +111,7 @@ retriever = load_vectorstore_and_get_retriever()
 
 ## --- sidebar --- ##
 with st.sidebar:
-    st.page_link("home.py", label = "이력서", icon = "📄")
+    st.page_link("streamlit_app.py", label = "이력서", icon = "📄")
     st.page_link("https://super-son.tistory.com", label = "포트폴리오", icon = "📁")
     st.page_link("https://super-son.tistory.com", label = "사이드프로젝트", icon = "💡")
     st.divider()
