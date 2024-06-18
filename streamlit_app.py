@@ -115,7 +115,7 @@ with st.sidebar:
     st.page_link("https://super-son.tistory.com", label = "포트폴리오", icon = "📁")
     st.page_link("https://super-son.tistory.com", label = "사이드프로젝트", icon = "💡")
     st.divider()
-    s_col1, s_col2 = st.columns([0.6, 0.4])
+    s_col1, s_col2 = st.columns([1, 1])
     with s_col1:
         st.markdown("# 🤖 Chatbot")
     with s_col2:
